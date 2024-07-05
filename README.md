@@ -87,8 +87,8 @@ If the Reveal.js-TOC-Progress is also used, the Reveal.js-Title-Footer footer is
 
 # Links
 
-- Source code on GitHub: https://github.com/e-gor/Reveal.js-Title-Footer
-- Demo presentation with Reveal.js-Title-Footer: http://e-gor.github.io/Reveal.js-Title-Footer/demo
+- Source code on GitHub: https://github.com/skyface753/Reveal.js-Title-Footer.git
+- Demo presentation with Reveal.js-Title-Footer: http://www.skyface.de/Reveal.js-Title-Footer/
 
 # License
 
