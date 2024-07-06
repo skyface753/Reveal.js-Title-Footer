@@ -20,10 +20,24 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
+        <section data-state="no-title-footer">
           <h2>Title-Footer Demo</h2>
+          <p>By Sebastian Joerz</p>
         </section>
-        <section>Slide 2</section>
+        <section>
+          <section>
+            <h2>Slide 2.1</h2>
+            <p>Some content</p>
+          </section>
+          <section data-state="no-title-footer">
+            <h2>Slide 2.2</h2>
+            <p>Without the Footer: data-state="no-title-footer"</p>
+          </section>
+        </section>
+        <section>
+          <h2>Slide 3</h2>
+          <p>Thx for watching</p>
+        </section>
       </div>
     </div>
 
