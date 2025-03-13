@@ -20,44 +20,77 @@ The background color of the footer is also configurable.
 
 # Installation
 
-## Get the files
-
-Clone the Reveal.js-Title-Footer repository to the `plugin` folder of the Reveal.js presentation:
+## NPM (Recommended)
 
 ```bash
-cd plugin
-git clone https://github.com/skyface753/Reveal.js-Title-Footer.git
+npm install --save revealjs-title-footer
 ```
 
-## CSS
+Then, include the plugin in the Reveal.js presentation:
 
-The CSS of the Reveal.js-Title-Footer plugin is included dynamically when it is initialized. However, if we configure the presentation not to include the Reveal.js-Title-Footer footer in the first page, this will be shown until the CSS is loaded dynamically, causing an ugly effect. To avoid it, include the CSS in the header of the Reveal.js presentation, with this line:
+```html
+<head>
+  <link
+    rel="stylesheet"
+    href="node_modules/revealjs-title-footer/src/title-footer.css"
+  />
+  <script src="node_modules/revealjs-title-footer/src/title-footer.js"></script>
+</head>
+```
 
-`<link rel="stylesheet" href="plugin/Reveal.js-Title-Footer/plugin/title-footer/title-footer.css">`
+> Note: Add the plugin initialization to the Reveal.js initialization, as shown below in [Plugin initialization](#plugin-initialization).
 
-## Plugin initialization
+## JSDelivr CDN (Easiest)
 
-### Arguments:
+```html
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/revealjs-title-footer@latest/src/title-footer.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/revealjs-title-footer@latest/src/title-footer.js"></script>
+</head>
+```
 
-1. Title to show in the footer; if `null`, it will take the `h1`, `h2` and `h3` elements of the first slide.
-2. Background colour of the footer.
+> Note: Add the plugin initialization to the Reveal.js initialization, as shown below in [Plugin initialization](#plugin-initialization).
+
+## Manual
+
+### Manual Clone the Reveal.js-Title-Footer repository to the `plugin` folder of the Reveal.js presentation:
+
+```bash
+mkdir plugin/Reveal.js-Title-Footer
+cp -r Reveal.js-Title-Footer/src/* plugin/Reveal.js-Title-Footer/
+```
+
+> Note: The `plugin` folder should be in the root of the Reveal.js presentation.
+> Note: Add the plugin initialization to the Reveal.js initialization, as shown below in [Plugin initialization](#plugin-initialization).
+
+# Plugin initialization
+
+## Arguments:
+
+1. Title to show in the footer; if `null` or '', it will take the `h1`, `h2` and `h3` elements of the first slide.
+2. Background color of the footer.
 3. Author of the presentation.
 4. Show the current date in the footer.
 
 Include Reveal.js-Title-Footer among the Reveal.js plugin initializations, like this:
 
 ```javascript
-Reveal.initialize
-(
-	{
+Reveal.initialize({
 		...
-		dependencies:
-		[
-			...
-			{ src: 'plugin/Reveal.js-Title-Footer/plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize('', 'rgba(169,169,169,0.1)', 'Sebastian Joerz', true); } }
-		]
-	}
-);
+		plugins: [
+          RevealTitleFooter,
+        ],
+		titleFooter: {
+          title: 'My Presentation',
+          background: 'rgba(169,169,169,0.1)',
+          author: 'Sebastian Joerz',
+          showDate: true,
+        },
+		...
+});
 ```
 
 ## Customization
