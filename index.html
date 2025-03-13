@@ -13,9 +13,14 @@
     <link rel="stylesheet" href="dist/reveal.css" />
     <link rel="stylesheet" href="dist/theme/black.css" />
 
+    <script src="node_modules/revealjs-title-footer/src/title-footer.js"></script>
+    <link
+      rel="stylesheet"
+      href="node_modules/revealjs-title-footer/src/title-footer.css"
+    />
+
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
-    <link rel="stylesheet" href="plugin/title-footer/title-footer.css" />
   </head>
   <body>
     <div class="reveal">
@@ -45,6 +50,7 @@
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
+
     <script>
       // More info about initialization & config:
       // - https://revealjs.com/initialization/
@@ -53,21 +59,18 @@
         hash: true,
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-        dependencies: [
-          {
-            src: 'plugin/title-footer/title-footer.js',
-            async: true,
-            callback: function () {
-              title_footer.initialize(
-                '',
-                'rgba(169,169,169,0.1)',
-                'Sebastian Joerz',
-                true
-              );
-            },
-          },
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealTitleFooter,
         ],
+        titleFooter: {
+          title: '',
+          background: 'rgba(169,169,169,0.1)',
+          author: 'Sebastian Joerz',
+          showDate: true,
+        },
       });
     </script>
   </body>
